@@ -1,0 +1,55 @@
+program no 04
+<!DOCTYPE html>
+<head>
+    <title>UL and LI event delegation</title>
+    <style>
+        ul{
+            border: 2px solid #333;
+            padding: 10px;
+            width:250px;
+        }
+        li{
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>EVENT DELEGATION with ul and li</h2>
+    <ul id="itemList">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <button id="addBtn">Add item</button>
+    <button id="removeBtn">Remove last item</button>
+    <button id="accessBtn">acess first item</button>
+    <p id="output"></p>
+    <script>
+        const ul=document.getElementById("itemList");
+        const output=document.getElementById("output");
+        let count=3;
+        ul.addEventListener("click",function(event){
+            if(event.target.tagName=="LI"){
+                output.textContent="you clicked:"+event.target.textContent;
+            }
+        });
+        document.getElementById("addBtn").addEventListener("click",function(){
+            count++;
+            const newLi=document.createElement("li");
+            newLi.textContent="item"+count;
+            ul.appendChild(newLi);
+        });
+        document.getElementById("removeBtn").addEventListener("click",function(){
+            if(ul.lastElementChild){
+                ul.removeChild(ul.lastElementChild);
+            }
+        });
+        document.getElementById("accessBtn").addEventListener("click",function(){
+            if(ul.firstElementChild){
+                output.textContent="firstItem is:"+ul.firstElementChild.textContent;
+            }
+        });
+    </script>
+</body>
+</html>
