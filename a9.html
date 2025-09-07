@@ -1,0 +1,17 @@
+whitespace
+<html>
+    <head>
+        <title>whitespace nodes in dom</title>
+    </head>
+    <body>
+        <div id="myDiv">
+             hello world!!
+        </div>
+        <script>
+            const div=document.getElementById("myDiv");
+            const firstChild=div.firstChild;
+            console.log("node type:",firstChild.nodeType);
+            console.log("node value:",JSON.stringify(firstChild.nodeValue));
+        </script>
+    </body>
+</html>

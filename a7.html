@@ -1,0 +1,44 @@
+select 
+<html>
+    <head>
+        <title>Dynamic dropdown example</title>
+    </head>
+    <body>
+        <h3>choose category and sub-option</h3>
+        <label for="category">select category:</label>
+        <select id="category" onchange="updateOptions"()>
+            <option value="">--select--</option>
+            <option value="fruits">fruits</option>
+            <option value="vehicles">vehicles</option>
+            <option value="languages">languages</option>
+         </select>
+         <br><br>
+            <label for="subOption">select option:</label>
+            <select id="sunOption">
+                <option value="">--select an option--</option>
+            </select>
+        <script>
+            function updateOptions(){
+                const category=document.getElementById("category").value;
+                const subOption=document.getElementById("sunOption");
+                subOption.innerHTML="<option value=''>--select an option--</option>";
+                let options=[];
+                if(category==="fruits"){
+                    options=["apple","banana","mango","orange"];
+                }
+                else if(category==="vehicles"){
+                    options=["bike","car","bus","truck"];
+                } 
+               else if(category==="languages"){
+                options=["js","python","c++","c"];
+               }
+            options.forEach(item =>{
+                const option=document.createElement("option");
+                option.value=item.toLowerCase();
+                option.textContent=item;
+                subOption.appendChild(option);
+            });
+        }
+        </script>
+    </body>
+</html>

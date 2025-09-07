@@ -1,0 +1,30 @@
+password to text 
+<html>
+    <head>
+        <title>show/hide password</title>
+    </head>
+    <body>
+        <h2>login form</h2>
+        <form>
+            <label for="username">username:</label>
+            <input type="username" name="username" id="username" required><br><br>
+            <label for="password">password:</label>
+            <input type="password" name="password" id="password" required>
+            <input type="checkbox"  id="showPassword">show password 
+            <br><br>
+            <button type="submit">login</button>
+        </form>
+        <script>
+            const passwordFiled=document.getElementById("password");
+            const showPassword=document.getElementById("showPassword");
+            showPassword.addEventListener("change",function(){
+                if(showPassword.checked){
+                    passwordFiled.type="text";
+                }
+                else{
+                    passwordFiled.type="password";
+                }
+            });
+        </script>
+    </body>
+</html>

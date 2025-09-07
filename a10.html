@@ -1,0 +1,17 @@
+event handler
+<html>
+    <head>
+        <title>event handler example</title>
+    </head>
+    <body>
+        <button id="myButton">Click me!!</button>
+        <script>
+            const button=document.getElementById('myButton');
+            function handleClick()
+            {
+                alert('Button was clicked');
+            }
+            button.addEventListener('click',handleClick);
+        </script>
+    </body>
+</html>

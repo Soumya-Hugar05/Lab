@@ -1,0 +1,18 @@
+
+<html>
+    <body>
+        <ul id="myList">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+        <script>
+            const list=document.getElementById('myList');
+            const firstItem=list.firstChild;
+            const secondItem=firstItem.nextSibling;
+            const thirdItem=list.lastChild;
+            const previous=thirdItem.previousSibling;
+            console.log(secondItem.textContent);
+        </script>
+    </body>
+</html>

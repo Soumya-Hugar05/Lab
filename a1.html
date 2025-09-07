@@ -1,0 +1,42 @@
+event bubbling 
+<html>
+    <head>
+        <title>Event bubbling example</title>
+        <style>
+            div,section,button{
+                padding: 20px;
+                margin: 10px;
+                border: 2px solid black;
+                display:block ;
+            }
+            button{
+                cursor: pointer;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div">
+            <section id="section">
+                <button id="button">click me  </button>
+            </section>
+        </div>
+        <script>
+            document.getElementById("div").addEventListener("click",function()
+        {
+            console.log("DIV clicked");
+            alert("DIV clicked");
+        });
+        document.getElementById("section").addEventListener("click",function()
+        {
+            console.log("SECTION clicked");
+            alert("SECTION clicked");
+        });
+         document.getElementById("button").addEventListener("click",function()
+        {
+            console.log("BUTTON clicked");
+            alert("BUTTON clicked");
+        });
+        </script>
+    </body>
+</html>

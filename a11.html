@@ -1,0 +1,23 @@
+attribute 
+<html>
+    <head>
+        <title>Attribute demo</title>
+    </head>
+    <body>
+        <img id="myImage" src="R.jpeg" alt="logo" width="200">
+        <script>
+            const image=document.getElementById('myImage');
+            if(image.hasAttribute('src')){
+                console.log("image source exists:",image.getAttribute('src'));
+            }
+            image.setAttribute('src','R (1).jpeg');
+            console.log("updated source:",image.getAttribute('src'));
+            image.setAttribute('title','company logo');
+            if(image.hasAttribute('title')){
+                console.log("image title exists:",image.getAttribute('title'));
+            }
+            image.removeAttribute('alt');
+            console.log("alt attribute removed:",image.hasAttribute('alt'));
+        </script>
+    </body>
+</html>

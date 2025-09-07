@@ -1,0 +1,17 @@
+read and write
+<html>
+    <head><title>JSOn read and write</title></head>
+    <body>
+        <h2>To Read and Write JSON</h2>
+        <script>
+            const person={name:"vaishnavi",age:19,skills:["java","python","js"]};
+            const jsonString=JSON.stringify(person,null,2);
+            console.log("writing json to console");
+            console.log(jsonString);
+            const parsedData=JSON.parse(jsonString);
+            console.log("reading json from string");
+            console.log("name",parsedData.name);
+            console.log("skills",parsedData.skills.join(","));
+        </script>
+    </body>
+</html>
